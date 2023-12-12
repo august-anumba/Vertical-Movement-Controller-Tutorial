@@ -81,12 +81,12 @@ We will also want to adject the air control a bit so inside of the `MovePlayer` 
 
 You can use the pictured values as a guide and adject as seen fit.
 
-I encountered some errors and bugs with the jumping, to fix them i needed to change the grounded = Physics.Raycast to:
+I encountered some errors and bugs with the jumping, to fix them i needed to adjust the grounded = Physics.Raycast calculation to:
 
 ```.cs
 grounded = Physics.Raycast(transform.position + new Vector3(0, 0.05f, 0), Vector3.down, playerHeight * 0.05f, whatIsGround);
 ```
-and that fixed the bug where the player could essentially double jump.
+and that fixed the bug where the player could essentially double jump while holding spacebar.
 
 The finished script should look like this;
 
